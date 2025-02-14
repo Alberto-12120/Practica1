@@ -10,6 +10,7 @@ public class Asiento {
     }
 
     public void asignarAsitntos(){
+        //iuiuiuui
         
     }
     
