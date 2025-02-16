@@ -1,6 +1,6 @@
 package practica1_tp;
 
-public class Viajero {
+abstract class Viajero {
     private String nombre;
     private String apellido;
     private String dni;

@@ -9,16 +9,20 @@ public class Asiento {
         this.numero = numero;
     }
 
-    public void asignarAsitntos(){
-        //iuiuiuui
-        
+    //Obtiene de la clase Viajero el viajero que ocupa el asiento
+    Viajero obtenViajero () {
+        if (!fueraServicio){
+            return viajero;
+        }
+        return null;
     }
-    
-    public void generarHojaViaje(){
-        
+
+    //Devuelve si el asiento esta fuera de servicio
+    boolean estarFueraServicio(){
+        return fueraServicio;
     }
-    
-    public void obtenerOcupacion(){
-        
+
+    void asiganarAsieto (Viajero viajero){
+        this.viajero = viajero; //Como el asieto ya tiene un viajero asignado, el asiento ya no esta disponible
     }
 }

@@ -1,5 +1,4 @@
 package practica1_tp;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -29,5 +28,7 @@ public class Test {
     }
     
     // Prototipo 2 - Asignar
-    
+    public void asignarAsientos(){
+        
+    }
 }

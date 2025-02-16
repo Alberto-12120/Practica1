@@ -24,8 +24,7 @@ public class Viaje {
                 codigo = scannerViaje.next();
                 origen = scannerViaje.next();
                 destino  = scannerViaje.next();
-//                fecha = scannerViaje.next
-                bus = new Bus(); 
+                Bus bus = new Bus(); 
             }
             System.out.println(origen + "-" + destino);
         }        

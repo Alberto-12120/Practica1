@@ -4,9 +4,8 @@ public class Practica1_TP {
 
     public static void main(String[] args) {
         
-       Test test1 = new Test();
-       test1.escanearBus();
-       test1.escanearViaje();
+       Bus bus1 = new Bus();
+        bus1.obtenerAsientos();
         
     }
 }
