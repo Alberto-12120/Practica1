@@ -1,3 +1,9 @@
+/**
+ *  Bus.java
+ *  Alberto Álvarez y Samuel Rodriguez (02/2025)
+ * 
+ */
+
 package practica1_tp;
 
 import java.io.File;
@@ -8,6 +14,13 @@ public class Bus {
     private int filas;
     private int columnas;
     private Asiento asiento[][];
+
+//Construye el bus
+    public Bus(int filas, int columnas){
+        this.filas = filas;
+        this.columnas = columnas;
+        asiento = new Asiento[filas][columnas];
+    }
     
     // Contstruye el bus de un fichero
     public void obtenerAsientos(){

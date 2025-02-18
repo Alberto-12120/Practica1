@@ -1,3 +1,9 @@
+/**
+ *  Viajero.java
+ *  Alberto Álvarez y Samuel Rodriguez (02/2025)
+ * 
+ */
+
 package practica1_tp;
 
 abstract class Viajero {
