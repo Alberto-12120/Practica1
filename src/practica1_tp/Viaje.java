@@ -42,7 +42,7 @@ public class Viaje {
                     this.destino = lineaScanner.next();
                     this.fecha = LocalDate.parse(lineaScanner.next());
                     this.hora = LocalTime.parse(lineaScanner.next());
-                    this.bus = new Bus(); // Asumiendo que tienes un constructor por defecto en la clase Bus
+                    //this.bus = new Bus(); // Asumiendo que tienes un constructor por defecto en la clase Bus
                     lineaScanner.close();
                     break;
                 }
@@ -78,8 +78,7 @@ public class Viaje {
 
     }
 
-    public void asignarAsientos() {
+    public void asignarAsiento(Bus bus. Viajero viajero) {
 
     }
-
 }
