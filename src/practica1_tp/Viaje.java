@@ -8,8 +8,12 @@ package practica1_tp;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Scanner;
 
 public class Viaje {
@@ -47,9 +51,20 @@ public class Viaje {
         bus.obtenerOcupacion();
     }
 
+    //Genera la hoja de viaje con los asientos asignados de cada pasajero
     public void generarHojaViaje() {
-
+        String[] listadoViajeros = bus.obtenerListadoViajeros();
+        try (PrintWriter writer = new PrintWriter("hoja_viaje.txt")) {
+            writer.println("Listado de Viajeros y Asientos Asignados:");
+            for (String linea : listadoViajeros) {
+                writer.println(linea);
+            }
+            System.out.println("Hoja de viaje generada correctamente.");
+        } catch (FileNotFoundException e) {
+            System.out.println("Error al generar la hoja de viaje: " + e.getMessage());
+        }
     }
+
 
     public void asignarAsiento(Viajero viajero, String numero) {
         bus.asignarAsiento(viajero, numero);

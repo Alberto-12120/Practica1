@@ -8,6 +8,8 @@ package practica1_tp;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Bus {
@@ -56,5 +58,14 @@ public class Bus {
 
     public void obtenerOcupacion(){
         
+    }
+
+    //genera el listado de los viajeros en el bus
+    public String[] obtenerListadoViajeros() {
+        String[] listado = new String[contador];
+        for (int i = 0; i < contador; i++) {
+            listado[i] = "Viajero: " + viajeros[i].getNombre() + ", Asiento: " + asientos[i];
+        }
+        return listado;
     }
 }

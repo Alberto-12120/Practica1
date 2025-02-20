@@ -16,6 +16,15 @@ class Viajero {
         this.apellido = apellido;
         this.dni = dni;
     }
+
+    // Getters y Setters para obtener el nombre del pasajero
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     
     public void obtenerOcupacion(){
         
