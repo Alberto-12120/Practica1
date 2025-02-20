@@ -6,15 +6,8 @@
 
 package practica1_tp;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
-import java.util.Scanner;
 
 public class Viaje {
     private String codigo;
@@ -47,7 +40,7 @@ public class Viaje {
     } 
 
     public void obtenerOcupacion(){
-        toString();
+        System.out.println(codigo + " " + origen + "-" + destino + " " + dia + "/" + mes + "/" + año + " " + hora + ":" + minutos);
         bus.obtenerOcupacion();
     }
 

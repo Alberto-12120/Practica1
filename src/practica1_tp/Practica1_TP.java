@@ -23,17 +23,18 @@ public class Practica1_TP {
 
           File archivoBus = new File("viajes.txt");
           Scanner scannerBus = new Scanner(archivoBus);
-          int filas = scannerBus.nextInt();
-          int columnas = scannerBus.nextInt();
-          int j = 0;
           while (scannerBus.hasNextLine()) {
-            String numeroAsiento = scannerBus.next();
-            int filaAsiento = scannerBus.nextInt(); 
-            int columnaAsiento = scannerBus.nextInt();
-            asiento[j] = new Asiento(numeroAsiento, filaAsiento, columnaAsiento);
-            j++;
-            scannerBus.close();
-          }   
+            String codigoBus = scannerBus.next();
+            int filas = scannerBus.nextInt();
+            int columnas = scannerBus.nextInt();
+            for (int i = 1; i < filas; i++) {
+              String numeroAsiento = scannerBus.next();
+              int filaAsiento = scannerBus.nextInt(); 
+              int columnaAsiento = scannerBus.nextInt();
+              asiento[i-1] = new Asiento(numeroAsiento, filaAsiento, columnaAsiento);
+            }   
+          }
+          scannerBus.close();
 
           Viaje[] viaje = new Viaje[999];
 
@@ -52,9 +53,9 @@ public class Practica1_TP {
             LocalTime minuto = LocalTime.parse(scannerViaje.next());
             viaje[i] = new Viaje(codigo, origen, destino, dia, mes, año, hora, minuto, bus[numeroBus]);
             i++;
-            scannerViaje.close();
           }
-          
+          scannerViaje.close();
+
           //Prototipo 2
           viaje[1].asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), "05");
           viaje[2].asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), "08");
