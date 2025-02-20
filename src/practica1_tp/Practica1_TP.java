@@ -19,20 +19,22 @@ public class Practica1_TP {
           
           //Prototipo 1
           Bus[] bus = new Bus[999];
-          Asiento[] asiento = new Asiento[999];
 
           File archivoBus = new File("viajes.txt");
           Scanner scannerBus = new Scanner(archivoBus);
+          int i = 0;
           while (scannerBus.hasNextLine()) {
             String codigoBus = scannerBus.next();
             int filas = scannerBus.nextInt();
             int columnas = scannerBus.nextInt();
-            for (int i = 1; i < filas; i++) {
-              String numeroAsiento = scannerBus.next();
+            Asiento[] asientos = new Asiento[filas];
+            for (int k = 0; k < filas; k++) {
+              int numeroAsiento = scannerBus.nextInt();
               int filaAsiento = scannerBus.nextInt(); 
               int columnaAsiento = scannerBus.nextInt();
-              asiento[i-1] = new Asiento(numeroAsiento, filaAsiento, columnaAsiento);
+              asientos[k] = new Asiento(numeroAsiento, filaAsiento, columnaAsiento);
             }   
+            bus[i] = new Bus(codigoBus, filas, columnas, asientos);
           }
           scannerBus.close();
 
@@ -40,7 +42,7 @@ public class Practica1_TP {
 
           File archivoViaje = new File("viajes.txt");
           Scanner scannerViaje = new Scanner(archivoViaje);
-          int i = 0;
+          int k = 0;
           while (scannerViaje.hasNextLine()) {
             String codigo = scannerViaje.next();
             String origen = scannerViaje.next();
@@ -51,8 +53,8 @@ public class Practica1_TP {
             LocalDate año = LocalDate.parse(scannerViaje.next());
             LocalTime hora = LocalTime.parse(scannerViaje.next());
             LocalTime minuto = LocalTime.parse(scannerViaje.next());
-            viaje[i] = new Viaje(codigo, origen, destino, dia, mes, año, hora, minuto, bus[numeroBus]);
-            i++;
+            viaje[k] = new Viaje(codigo, origen, destino, dia, mes, año, hora, minuto, bus[numeroBus]);
+            k++;
           }
           scannerViaje.close();
 
@@ -63,7 +65,7 @@ public class Practica1_TP {
           viaje[1].obtenerOcupacion();
 
           //Prototipo 3
-          viaje1.generarHoja(...);
+          viaje[1].generarHojaViaje();
 
         } 
         catch(Exception e) {

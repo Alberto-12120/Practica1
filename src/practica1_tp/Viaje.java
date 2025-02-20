@@ -59,7 +59,7 @@ public class Viaje {
     }
 
 
-    public void asignarAsiento(Viajero viajero, String numero) {
+    public void asignarAsiento(Viajero viajero, int numero) {
         bus.asignarAsiento(viajero, numero);
     }
 }
