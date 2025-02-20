@@ -13,15 +13,18 @@ import java.util.Scanner;
 public class Bus {
     private int filas;
     private int columnas;
-    private Asiento asiento[][];
+    private Asiento asiento;
 
-//Construye el bus
+    /*
+    //Construye el bus
     public Bus(int filas, int columnas){
         this.filas = filas;
         this.columnas = columnas;
         asiento = new Asiento[filas][columnas];
     }
-    
+    */
+
+    /* 
     // Contstruye el bus de un fichero
     public void obtenerAsientos(){
         try{
@@ -44,5 +47,14 @@ public class Bus {
         catch (FileNotFoundException e) {
             System.out.println("Archivo Bus.txt no encontrado.");
         }
+    }
+    */
+
+    public void asignarAsiento(Viajero viajero, String numero){
+        asiento.asignarAsiento(viajero, numero);
+    }
+
+    public void obtenerOcupacion(){
+        
     }
 }

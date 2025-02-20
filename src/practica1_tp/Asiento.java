@@ -7,28 +7,34 @@
 package practica1_tp;
 
 public class Asiento {
-    private Boolean fueraServicio;
     private Viajero viajero;
     private String numero;
+    private int fila;
+    private int columna;
 
-    public Asiento(String numero) {
+    public Asiento(String numero, int fila, int columna) {
         this.numero = numero;
+        this.fila = fila;
+        this.columna = columna;
     }
 
-    //Obtiene de la clase Viajero el viajero que ocupa el asiento
-    Viajero obtenViajero () {
-        if (!fueraServicio){
-            return viajero;
+    public void asignarAsiento (Viajero viajero, String numero) {
+        if (viajero == null) {
+            this.viajero = viajero;
+            System.out.println("Asiento " + numero + " asignado a " + viajero);
         }
-        return null;
+        else {
+            System.out.println("Asiento " + numero + " no disponible");
+        }
     }
 
-    //Devuelve si el asiento esta fuera de servicio
-    boolean estarFueraServicio(){
-        return fueraServicio;
-    }
-
-    void asiganarAsieto (Viajero viajero){
-        this.viajero = viajero; //Como el asieto ya tiene un viajero asignado, el asiento ya no esta disponible
+    public void liberarAsiento (Viajero viajero, String numero) {
+        if (viajero != null) {
+            this.viajero = null;
+            System.out.println("Asiento " + numero + " liberado");
+        }
+        else {
+            System.out.println("Asiento " + numero + " no ocupado");
+        }
     }
 }

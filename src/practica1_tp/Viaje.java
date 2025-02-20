@@ -16,8 +16,11 @@ public class Viaje {
     private String codigo;
     private String origen;
     private String destino;
-    private LocalDate fecha;
+    private LocalDate dia;
+    private LocalDate mes;
+    private LocalDate año;
     private LocalTime hora;
+    private LocalTime minutos;
     private Bus bus;
 
     /*
@@ -26,39 +29,29 @@ public class Viaje {
      * Construye un viaje
      */
  
-    public Viaje(String archivo, int numeroLinea) {
-        try {
-            File archivoViaje = new File(archivo);
-            Scanner scannerViaje = new Scanner(archivoViaje);
+    public Viaje(String codigo, String origen, String destino, LocalDate dia, LocalDate mes, 
+                LocalDate años, LocalTime hora, LocalTime minutos, Bus bus) {
+        this.codigo = codigo;
+        this.origen = origen;
+        this.destino = destino;
+        this.dia = dia;
+        this.mes = mes;
+        this.año = años;
+        this.hora = hora;
+        this.minutos = minutos;
+        this.bus = bus;
+    } 
 
-            int lineaActual = 0;
-            while (scannerViaje.hasNextLine()) {
-                lineaActual++;
-                String linea = scannerViaje.nextLine();
-                if (lineaActual == numeroLinea) {
-                    Scanner lineaScanner = new Scanner(linea);
-                    this.codigo = lineaScanner.next();
-                    this.origen = lineaScanner.next();
-                    this.destino = lineaScanner.next();
-                    this.fecha = LocalDate.parse(lineaScanner.next());
-                    this.hora = LocalTime.parse(lineaScanner.next());
-                    //this.bus = new Bus(); // Asumiendo que tienes un constructor por defecto en la clase Bus
-                    lineaScanner.close();
-                    break;
-                }
-            }
-            scannerViaje.close();
-        } 
-        catch (FileNotFoundException e) {
-            System.out.println("Archivo " + archivo + " no encontrado.");
-        }
+    public void obtenerOcupacion(){
+        toString();
+        bus.obtenerOcupacion();
     }
 
     public void generarHojaViaje() {
 
     }
 
-    public void asignarAsiento(Bus bus. Viajero viajero) {
-
+    public void asignarAsiento(Viajero viajero, String numero) {
+        bus.asignarAsiento(viajero, numero);
     }
 }
