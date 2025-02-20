@@ -1,4 +1,4 @@
-/**
+/*
  *  Viaje.java
  *  Alberto Álvarez y Samuel Rodriguez (02/2025)
  * 
@@ -48,31 +48,11 @@ public class Viaje {
                 }
             }
             scannerViaje.close();
-        } catch (FileNotFoundException e) {
+        } 
+        catch (FileNotFoundException e) {
             System.out.println("Archivo " + archivo + " no encontrado.");
         }
     }
-
-    /*
-     * public void obtenerOcupacion(){
-     * try{
-     * File archivoViaje = new File("Viaje.txt");
-     * Scanner scannerViaje = new Scanner(archivoViaje);
-     * 
-     * while (scannerViaje.hasNextLine()){
-     * codigo = scannerViaje.next();
-     * origen = scannerViaje.next();
-     * destino = scannerViaje.next();
-     * Bus bus = new Bus();
-     * }
-     * System.out.println(origen + "-" + destino);
-     * }
-     * catch (FileNotFoundException e) {
-     * System.out.println("Archivo Viaje.txt no encontrado.");
-     * }
-     * 
-     * }
-     */
 
     public void generarHojaViaje() {
 
