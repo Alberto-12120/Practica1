@@ -63,7 +63,7 @@ public class Practica1_TP {
           viaje[1].obtenerOcupacion();
 
           //Prototipo 3
-          viaje1.generarHoja(...);
+          viaje[1].generarHojaViaje();
 
         } 
         catch(Exception e) {

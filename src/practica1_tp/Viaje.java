@@ -8,6 +8,8 @@ package practica1_tp;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
 
 public class Viaje {
     private String codigo;

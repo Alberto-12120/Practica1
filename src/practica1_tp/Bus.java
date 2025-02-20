@@ -7,18 +7,20 @@
 package practica1_tp;
 
 public class Bus {
+    private String codigo;
     private int filas;
     private int columnas;
-    private Asiento asiento;
+    private Asiento[] asiento;
 
-    /*
+    
     //Construye el bus
-    public Bus(int filas, int columnas){
+    public Bus(String codigo, int filas, int columnas, Asiento[] asiento){
+        this.codigo = codigo;
         this.filas = filas;
         this.columnas = columnas;
-        asiento = new Asiento[filas][columnas];
+        this.asiento = asiento;
     }
-    */
+    
 
     /* 
     // Contstruye el bus de un fichero
@@ -57,8 +59,14 @@ public class Bus {
     //genera el listado de los viajeros en el bus
     public String[] obtenerListadoViajeros() {
         String[] listado = new String[contador];
-        for (int i = 0; i < contador; i++) {
-            listado[i] = "Viajero: " + viajeros[i].getNombre() + ", Asiento: " + asientos[i];
+        int index = 0;
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                if (asientos[i][j] != null && asientos[i][j].getViajero() != null) {
+                    listado[index] = "Viajero: " + asientos[i][j].getViajero().getNombre() + ", Asiento: " + asientos[i][j].getNumero();
+                    index++;
+                }
+            }
         }
         return listado;
     }
