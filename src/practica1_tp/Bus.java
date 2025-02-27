@@ -32,8 +32,14 @@ public class Bus {
     //genera el listado de los viajeros en el bus
     public String[] obtenerListadoViajeros() {
         String[] listado = new String[contador];
-        for (int i = 0; i < contador; i++) {
-            listado[i] = "Viajero: " + viajeros[i].getNombre() + ", Asiento: " + asientos[i];
+        int index = 0;
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                if (asientos[i][j] != null && asientos[i][j].getViajero() != null) {
+                    listado[index] = "Viajero: " + asientos[i][j].getViajero().getNombre() + ", Asiento: " + asientos[i][j].getNumero();
+                    index++;
+                }
+            }
         }
         return listado;
     }
