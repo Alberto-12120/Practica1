@@ -9,7 +9,6 @@ package practica1_tp;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.io.PrintWriter;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Viaje {
@@ -30,12 +29,12 @@ public class Viaje {
         this.codigo = scanner.next();
         this.origen = scanner.next();
         this.destino = scanner.next();
-        this.fecha = LocalDate.parse(scanner.next(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        this.hora = LocalTime.parse(scanner.next(), DateTimeFormatter.ofPattern("HH:mm"));
+        this.fecha = LocalDate.parse(scanner.next());
+        this.hora = LocalTime.parse(scanner.next());
         this.bus = bus;
     }
 
-    public void obtenerOcupacion(int numeroBus) {
+    public void obtenerOcupacion() {
         bus.obtenerOcupacion();
     }
 

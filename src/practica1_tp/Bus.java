@@ -6,6 +6,9 @@
 
 package practica1_tp;
 
+import java.io.File;
+import java.util.Scanner;
+
 public class Bus {
     private String codigo;
     private int filas;
@@ -13,11 +16,20 @@ public class Bus {
     private Asiento[] asiento;
 
     //Construye el bus
-    public Bus(String codigo, int filas, int columnas, Asiento[] asiento){
-        this.codigo = codigo;
-        this.filas = filas;
-        this.columnas = columnas;
-        this.asiento = asiento;
+    public Bus(String archivo){
+        Scanner scannerBus = new Scanner(archivo);
+        while (scannerBus.hasNextLine()) {
+            int filas = scannerBus.nextInt();
+            int columnas = scannerBus.nextInt();
+            Asiento[] asientos = new Asiento[filas];
+            for (int k = 0; k < filas; k++) {
+                int numeroAsiento = scannerBus.nextInt();
+                int filaAsiento = scannerBus.nextInt(); 
+                int columnaAsiento = scannerBus.nextInt();
+                asientos[k] = new Asiento(numeroAsiento, filaAsiento, columnaAsiento);
+            }
+          }
+          scannerBus.close();
     }
 
     public void asignarAsiento(Viajero viajero, int numero){
@@ -25,7 +37,25 @@ public class Bus {
     }
 
     public void obtenerOcupacion(){
-        
+        for (int i = 0; i < asiento.length; i++){
+            if (asiento[i].obtenerViajero() != null){
+                if (asiento[i].obtenerNumero() >= 10){
+                    System.out.println("(" + asiento[i].obtenerNumero() + ")");
+                }
+                else {
+                    System.out.println("(0" + asiento[i].obtenerNumero() + ")");
+                }
+            }
+            else{
+                if (asiento[i].obtenerNumero() >= 10){
+                    System.out.println(asiento[i].obtenerNumero());
+                }
+                else {
+                    System.out.println("0" + asiento[i].obtenerNumero());
+                }
+            }
+        }
+
     }
 
     /*
