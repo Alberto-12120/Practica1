@@ -35,6 +35,7 @@ public class Viaje {
     }
 
     public void obtenerOcupacion() {
+        toString();
         bus.obtenerOcupacion();
     }
 
