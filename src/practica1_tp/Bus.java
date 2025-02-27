@@ -27,6 +27,9 @@ public class Bus {
     public void obtenerOcupacion(){
         
     }
+    public Asiento[] getAsiento() {
+        return asiento;
+    }
 
     /*
     //genera el listado de los viajeros en el bus
