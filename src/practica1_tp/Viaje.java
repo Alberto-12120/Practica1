@@ -9,9 +9,6 @@ package practica1_tp;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.io.PrintWriter;
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Viaje {
@@ -38,6 +35,7 @@ public class Viaje {
     }
 
     public void obtenerOcupacion() {
+        toString();
         bus.obtenerOcupacion();
     }
 

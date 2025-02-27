@@ -37,4 +37,12 @@ public class Asiento {
             System.out.println("Asiento " + numero + " no ocupado");
         }
     }
+
+    public int obtenerNumero() {
+        return numero;
+    }
+
+    public Viajero obtenerViajero() {
+        return viajero;
+    }
 }
