@@ -8,16 +8,15 @@ package practica1_tp;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 public class Viaje {
     private String codigo;
     private String origen;
     private String destino;
-    private LocalDate dia;
-    private LocalDate mes;
-    private LocalDate año;
+    private LocalDate fecha;
     private LocalTime hora;
-    private LocalTime minutos;
     private Bus bus;
 
     /*
@@ -26,24 +25,21 @@ public class Viaje {
      * Construye un viaje
      */
  
-    public Viaje(String codigo, String origen, String destino, LocalDate dia, LocalDate mes, 
-                LocalDate años, LocalTime hora, LocalTime minutos, Bus bus) {
-        this.codigo = codigo;
-        this.origen = origen;
-        this.destino = destino;
-        this.dia = dia;
-        this.mes = mes;
-        this.año = años;
-        this.hora = hora;
-        this.minutos = minutos;
+    public Viaje(Scanner scanner, Bus bus) {
+        this.codigo = scanner.next();
+        this.origen = scanner.next();
+        this.destino = scanner.next();
+        this.fecha = LocalDate.parse(scanner.next(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        this.hora = LocalTime.parse(scanner.next(), DateTimeFormatter.ofPattern("HH:mm"));
         this.bus = bus;
-    } 
+    }
 
-    public void obtenerOcupacion(){
-        System.out.println(codigo + " " + origen + "-" + destino + " " + dia + "/" + mes + "/" + año + " " + hora + ":" + minutos);
+    public void obtenerOcupacion(int numeroBus) {
         bus.obtenerOcupacion();
     }
 
+
+    /*
     //Genera la hoja de viaje con los asientos asignados de cada pasajero
     public void generarHojaViaje() {
         String[] listadoViajeros = bus.obtenerListadoViajeros();
@@ -57,9 +53,10 @@ public class Viaje {
             System.out.println("Error al generar la hoja de viaje: " + e.getMessage());
         }
     }
-
+    */
 
     public void asignarAsiento(Viajero viajero, int numero) {
+        System.out.println("Para el viaje " + origen + "-" + destino);
         bus.asignarAsiento(viajero, numero);
     }
 }

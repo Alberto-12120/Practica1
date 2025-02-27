@@ -28,6 +28,7 @@ public class Bus {
         
     }
 
+    /*
     //genera el listado de los viajeros en el bus
     public String[] obtenerListadoViajeros() {
         String[] listado = new String[contador];
@@ -36,4 +37,5 @@ public class Bus {
         }
         return listado;
     }
+    */
 }

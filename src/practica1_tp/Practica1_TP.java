@@ -15,12 +15,12 @@ import java.util.Scanner;
 public class Practica1_TP {
 
     public static void main(String[] args) {
-        try {  
-          
+        try {  /*
+                    
           //Prototipo 1
           Bus[] bus = new Bus[999];
 
-          File archivoBus = new File("viajes.txt");
+          File archivoBus = new File("Bus.txt");
           Scanner scannerBus = new Scanner(archivoBus);
           int i = 0;
           while (scannerBus.hasNextLine()) {
@@ -40,7 +40,7 @@ public class Practica1_TP {
 
           Viaje[] viaje = new Viaje[999];
 
-          File archivoViaje = new File("viajes.txt");
+          File archivoViaje = new File("Viaje.txt");
           Scanner scannerViaje = new Scanner(archivoViaje);
           int k = 0;
           while (scannerViaje.hasNextLine()) {
@@ -48,28 +48,43 @@ public class Practica1_TP {
             String origen = scannerViaje.next();
             String destino = scannerViaje.next();
             int numeroBus = scannerViaje.nextInt();
-            LocalDate dia = LocalDate.parse(scannerViaje.next());
-            LocalDate mes = LocalDate.parse(scannerViaje.next());
-            LocalDate año = LocalDate.parse(scannerViaje.next());
+            LocalDate fecha = LocalDate.parse(scannerViaje.next());
             LocalTime hora = LocalTime.parse(scannerViaje.next());
-            LocalTime minuto = LocalTime.parse(scannerViaje.next());
-            viaje[k] = new Viaje(codigo, origen, destino, dia, mes, año, hora, minuto, bus[numeroBus]);
+            viaje[k] = new Viaje(codigo, origen, destino,fecha, hora, bus[numeroBus]);
             k++;
           }
           scannerViaje.close();
 
           //Prototipo 2
-          viaje[1].asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), "05");
-          viaje[2].asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), "08");
+          viaje[1].asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), 5);
+          viaje[2].asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), 8);
         
-          viaje[1].obtenerOcupacion();
+          viaje[1].obtenerOcupacion(numeroBus);
+          */
 
-          //Prototipo 3
-          viaje[1].generarHojaViaje();
+           //Prototipo 3
+          //---------------------------------------------------
+          
+          Scanner scannerViajes = new Scanner(new File("Viaje.txt"));
+
+          Viaje viaje1 = new Viaje(scannerViajes, new Bus("Bus.txt"));
+          Viaje viaje2 = new Viaje(scannerViajes, new Bus("Bus.txt"));
+   
+          scannerViajes.close();
+
+          viaje1.asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), 5);
+          viaje2.asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), 8);
+
+          System.out.println(viaje1.obtenerOcupacion());  
+          System.out.println(viaje2.obtenerOcupacion());
+
+          viaje1.generarHojaViaje("hoja_viaje1.txt");
+          viaje2.generarHojaViaje("hoja_viaje2.txt");
 
         } 
         catch(Exception e) {
           System.out.println(e);
+          e.printStackTrace();
         }
       }  
     }
