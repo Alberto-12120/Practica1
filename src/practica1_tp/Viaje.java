@@ -47,13 +47,11 @@ public class Viaje {
    *  crea la hoja de viaje
    * 
    */   
-  public void crearHojaViaje(String nombreFichero) throws Exception {
+  public void crearHojaViaje(String nombreHojaViaje) throws Exception {
     PrintWriter fichero = 
-      new PrintWriter(new BufferedWriter(new FileWriter(nombreFichero)));    
+      new PrintWriter(new BufferedWriter(new FileWriter(nombreHojaViaje)));    
     
-    fichero.println(bus.asiento.numero());
-    fichero.println(bus.asiento.viajero());
-    
+    fichero.println(bus.toString());
     fichero.close();
   }
 
@@ -62,4 +60,6 @@ public class Viaje {
         System.out.println("Para el viaje " + origen + "-" + destino);
         bus.asignarAsiento(viajero, numero);
     }
+
+    
 }

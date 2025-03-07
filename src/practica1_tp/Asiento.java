@@ -45,4 +45,14 @@ public class Asiento {
     public Viajero obtenerViajero() {
         return viajero;
     }
+
+    public boolean estaVacio(){
+
+        return (this.viajero == null);
+    }
+    @Override
+    public String toString(){
+
+        return "\nN de asiento: " + numero + viajero.toString();
+    }
 }

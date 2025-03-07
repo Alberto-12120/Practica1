@@ -15,18 +15,22 @@ public class Bus {
     private int columnas;
     private Asiento[] asiento;
 
+    
+    
     //Construye el bus
     public Bus(String archivo){
         Scanner scannerBus = new Scanner(archivo);
         while (scannerBus.hasNextLine()) {
-            int filas = scannerBus.nextInt();
-            int columnas = scannerBus.nextInt();
-            Asiento[] asientos = new Asiento[filas];
+            System.out.println(scannerBus.nextLine());
+            System.out.println(scannerBus.nextLine());
+            this.filas = Integer.parseInt(scannerBus.next());
+            this.columnas = scannerBus.nextInt();
+            this.asiento = new Asiento[filas];
             for (int k = 0; k < filas; k++) {
                 int numeroAsiento = scannerBus.nextInt();
                 int filaAsiento = scannerBus.nextInt(); 
                 int columnaAsiento = scannerBus.nextInt();
-                asientos[k] = new Asiento(numeroAsiento, filaAsiento, columnaAsiento);
+                this.asiento[k] = new Asiento(numeroAsiento, filaAsiento, columnaAsiento);
             }
           }
           scannerBus.close();
@@ -61,6 +65,18 @@ public class Bus {
         return asiento;
     }
 
+    @Override
+    public String toString() {
+        String cadena = "";
+
+        for (int i = 0; i < this.asiento.length; i++) {
+            if (!this.asiento[i].estaVacio()) {
+                cadena += this.asiento[i].toString();
+            }
+        }
+        return cadena;
+    }
+
     /*
     //genera el listado de los viajeros en el bus
     public String[] obtenerListadoViajeros() {
@@ -77,4 +93,7 @@ public class Bus {
         return listado;
     }
     */
+
+
+   
 }

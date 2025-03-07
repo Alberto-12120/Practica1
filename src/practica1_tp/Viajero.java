@@ -6,7 +6,7 @@
 
 package practica1_tp;
 
-class Viajero {
+public class Viajero {
     private String nombre;
     private String apellido;
     private String dni;
@@ -26,11 +26,10 @@ class Viajero {
         this.nombre = nombre;
     }
     
-    public void obtenerOcupacion(){
+    @Override
+    public String toString(){
         
+        return "Nombre: " + nombre;
     }
     
-    public void generarHojaViaje(){
-        
-    }
 }
