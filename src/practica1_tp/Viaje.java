@@ -36,12 +36,11 @@ public class Viaje {
         this.hora = LocalTime.parse(scanner.next());
         this.bus = bus;
     }
-
+ 
     public void obtenerOcupacion() {
         toString();
         bus.obtenerOcupacion();
     }
-
 
     /**
    *  crea la hoja de viaje
@@ -59,6 +58,11 @@ public class Viaje {
     public void asignarAsiento(Viajero viajero, int numero) {
         System.out.println("Para el viaje " + origen + "-" + destino);
         bus.asignarAsiento(viajero, numero);
+    }
+
+    @Override
+    public String toString() {
+        return "Viaje: " + origen + "-" + destino + " Fecha: " + fecha + " Hora: " + hora;
     }
 
     

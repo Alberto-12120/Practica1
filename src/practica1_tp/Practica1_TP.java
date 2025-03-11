@@ -24,10 +24,13 @@ public class Practica1_TP {
   
           scannerViajes.close();
 
-          viaje1.asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), 5);
+          viaje1.asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), 3);
+          viaje1.asignarAsiento(new Viajero("Pepito", "Rodriguez", "73411103W"), 17);
+          viaje1.asignarAsiento(new Viajero("Juan", "Rodriguez", "73411103W"), 44);
+          viaje1.asignarAsiento(new Viajero("David", "Rodriguez", "73411103W"), 55);
           //viaje2.asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), 8);
-
-          //System.out.println(viaje1.obtenerOcupacion());
+          
+          viaje1.obtenerOcupacion();
           //System.out.println(viaje2.obtenerOcupacion());
 
           viaje1.crearHojaViaje("hoja_viaje1.txt");

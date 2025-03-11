@@ -1,0 +1,5 @@
+
+N de asiento: 3 Nombre: Samuel
+N de asiento: 17 Nombre: Pepito
+N de asiento: 44 Nombre: Juan
+N de asiento: 55 Nombre: David

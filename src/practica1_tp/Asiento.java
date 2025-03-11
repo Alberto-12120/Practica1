@@ -19,17 +19,16 @@ public class Asiento {
     }
 
     public void asignarAsiento (Viajero viajero) {
-        if (viajero == null) {
+        if (this.viajero == null) {
             this.viajero = viajero;
-            System.out.println("Asiento " + numero + " asignado a " + viajero);
         }
         else {
             System.out.println("Asiento " + numero + " no disponible");
         }
     }
 
-    public void liberarAsiento (Viajero viajero) {
-        if (viajero != null) {
+    public void liberarAsiento () {
+        if (this.viajero != null) {
             this.viajero = null;
             System.out.println("Asiento " + numero + " liberado");
         }
@@ -53,6 +52,6 @@ public class Asiento {
     @Override
     public String toString(){
 
-        return "\nN de asiento: " + numero + viajero.toString();
+        return "\nN de asiento: " + numero + " " + viajero.toString();
     }
 }
