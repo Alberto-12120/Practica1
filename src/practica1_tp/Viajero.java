@@ -1,6 +1,6 @@
 /**
  *  Viajero.java
- *  Alberto Álvarez y Samuel Rodriguez (02/2025)
+ *  Alberto Álvarez (02/2025)
  * 
  */
 
@@ -17,7 +17,6 @@ public class Viajero {
         this.dni = dni;
     }
 
-    // Getters y Setters para obtener el nombre del pasajero
     public String getNombre() {
         return nombre;
     }
@@ -25,11 +24,10 @@ public class Viajero {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     @Override
-    public String toString(){
-        
+    public String toString() {
         return "Nombre: " + nombre;
     }
-    
+
 }
