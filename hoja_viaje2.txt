@@ -1,2 +1,3 @@
 
 N de asiento: 8 Nombre: Samuel
+N de asiento: 12 Nombre: Alberto

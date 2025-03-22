@@ -9,6 +9,8 @@ package practica1_tp;
 public class Asiento {
     private Viajero viajero;
     private int numero;
+    private String enunciadoAsiento = "\nN de asiento: ";
+    private String espacio = " ";
 
     public Asiento(int numero) {
         this.numero = numero;
@@ -38,6 +40,21 @@ public class Asiento {
 
     @Override
     public String toString() {
-        return "\nN de asiento: " + numero + " " + viajero.toString();
+        return enunciadoAsiento + numero + espacio + viajero.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        Asiento asiento = (Asiento) obj;
+        return numero == asiento.numero;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(numero);
     }
 }

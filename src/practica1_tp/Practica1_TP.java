@@ -26,12 +26,18 @@ public class Practica1_TP {
       viaje1.asignarAsiento(new Viajero("Juan", "Rodriguez", "73411103W"), 44);
       viaje1.asignarAsiento(new Viajero("David", "Rodriguez", "73411103W"), 55);
       viaje2.asignarAsiento(new Viajero("Samuel", "Rodriguez", "73411103W"), 8);
-
-      viaje1.obtenerOcupacion();
-      viaje2.obtenerOcupacion();
+      viaje2.asignarAsiento(new Viajero("Alberto", "Alavarez", "73411103W"), 12);
+      
+      String ocupacion = viaje1.obtenerOcupacion();
+      System.out.println(ocupacion);
+      String ocupacion2 = viaje2.obtenerOcupacion();
+      System.out.println(ocupacion2);
+      //viaje1.obtenerOcupacion();
+      //viaje2.obtenerOcupacion();
 
       viaje1.crearHojaViaje("hoja_viaje1.txt");
       viaje2.crearHojaViaje("hoja_viaje2.txt");
+
     } catch (Exception e) {
       System.out.println(e);
       e.printStackTrace();

@@ -10,6 +10,7 @@ public class Viajero {
     private String nombre;
     private String apellido;
     private String dni;
+    private String enunciadoNombre = "Nombre: ";
 
     public Viajero(String nombre, String apellido, String dni) {
         this.nombre = nombre;
@@ -17,17 +18,32 @@ public class Viajero {
         this.dni = dni;
     }
 
-    public String getNombre() {
+    public String obtenerNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void asignarNombre(String nombre) {
         this.nombre = nombre;
     }
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre;
+        return enunciadoNombre + nombre;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        Viajero viajero = (Viajero) obj;
+        return dni.equals(viajero.dni);
+    }
+
+    @Override
+    public int hashCode() {
+        return dni.hashCode();
     }
 
 }
